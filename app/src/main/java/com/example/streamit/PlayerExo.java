@@ -5,16 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.VideoView;
 
+import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.ui.StyledPlayerView;
 
 import java.util.Objects;
 
-public class ExoPlayer extends AppCompatActivity {
-    com.google.android.exoplayer2.ExoPlayer player;
+public class PlayerExo extends AppCompatActivity {
+    ExoPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +32,7 @@ public class ExoPlayer extends AppCompatActivity {
         Uri videoUrl = Uri.parse(v.getVideoURL());
 
         StyledPlayerView playerView = findViewById(R.id.playerView);
-        player = new com.google.android.exoplayer2.ExoPlayer.Builder(ExoPlayer.this).build();
+        player = new com.google.android.exoplayer2.ExoPlayer.Builder(PlayerExo.this).build();
         playerView.setPlayer(player);
 
         // Build the media item.

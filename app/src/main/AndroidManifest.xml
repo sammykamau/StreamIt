@@ -16,7 +16,7 @@
         android:theme="@style/Theme.StreamIt"
         tools:targetApi="31">
         <activity
-            android:name=".ExoPlayer"
+            android:name=".PlayerExo"
             android:exported="false" />
         <activity
             android:name=".Player"

@@ -3,7 +3,6 @@ package com.example.streamit;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.media.MediaBrowserCompat;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.MediaController;
@@ -14,14 +13,11 @@ import android.widget.VideoView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.exoplayer2.ExoPlayer;
-
 import java.util.Objects;
 
 public class Player extends AppCompatActivity {
 
     ProgressBar spinner;
-    ExoPlayer player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,8 +28,10 @@ public class Player extends AppCompatActivity {
         spinner = findViewById(R.id.progressBar);
         Intent i = getIntent();
         Bundle data = i.getExtras();
+        assert data != null;
         Video v = (Video) data.getSerializable("videoData");
 
+        assert v != null;
         getSupportActionBar().setTitle(v.getTitle());
 
         TextView title = findViewById(R.id.videoTitle);
