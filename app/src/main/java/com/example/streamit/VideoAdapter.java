@@ -43,7 +43,7 @@ public class VideoAdapter extends RecyclerView.Adapter<VideoAdapter.ViewHolder> 
         holder.vv.setOnClickListener(view -> {
             Bundle b = new Bundle();
             b.putSerializable("videoData",allVideos.get(position));
-            Intent i = new Intent(context, Player.class);
+            Intent i = new Intent(context, ExoPlayer.class);
             i.putExtras(b);
             view.getContext().startActivity(i);
         });
